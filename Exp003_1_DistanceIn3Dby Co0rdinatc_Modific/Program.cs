@@ -10,23 +10,27 @@
 // distance = Math.Sqrt((A[0] - B[0]) * (A[0] - B[0]) + (A[1] - B[1]) * (A[1] - B[1]) + (A[2] - B[2]) * (A[2] - B[2]));
 // Console.WriteLine(distance);
 //  Рабочая схема co Вводом координат в 3D:
-Console.WriteLine("Введите координаты первой точки");
-int[] A =new int[100];
-int i=0;
-for (i=0; i<3; i++)
-{int a =Convert.ToInt32(Console.ReadLine());
-A[i]=a;
+void Write3dCoordinat(int[] array)
+{
+    Console.WriteLine($"Введите координаты точки " + nameof(array));
+    for (int i = 0; i < 3; i++)
+    {
+        int a = Convert.ToInt32(Console.ReadLine());
+        array[i] = a;
+    }
+    Console.WriteLine();
+    //return array;
 }
-Console.WriteLine();
-//Console.Write("{0}",A[i]);
-Console.WriteLine("Введите координаты второй точки");
-int[] B =new int[100];
-i=0;
-for (i=0; i<3; i++)
-{int a =Convert.ToInt32(Console.ReadLine());
-B[i]=a;
+double Distance2pointIn3d(int[] A, int[] B)
+{
+   double distance = 0;
+   distance = Math.Sqrt((A[0] - B[0]) * (A[0] - B[0]) + (A[1] - B[1]) * (A[1] - B[1]) + (A[2] - B[2]) * (A[2] - B[2]));
+   return distance;
 }
-Console.WriteLine();
-double distance = 0;
-distance = Math.Sqrt((A[0] - B[0]) * (A[0] - B[0]) + (A[1] - B[1]) * (A[1] - B[1]) + (A[2] - B[2]) * (A[2] - B[2]));
-Console.WriteLine(distance);
+int[] A = {0,0,0};
+int[] B = {0,0,0};
+Write3dCoordinat(A);
+Write3dCoordinat(B);
+double dis = Distance2pointIn3d(A,B);
+//double distance = 0; distance = Math.Sqrt((A[0] - B[0]) * (A[0] - B[0]) + (A[1] - B[1]) * (A[1] - B[1]) + (A[2] - B[2]) * (A[2] - B[2]));
+Console.WriteLine(dis);
