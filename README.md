@@ -8,4 +8,4 @@
 
 23432 -> да
 
-![Блок-схема1]{diagram1.png} | [Код1_C#]{Exp001_Palinom\Program.cs}
+!["Блок-схема №1"](diagram1.png)  |  ["Код_C# №1"](Exp001_Palinom\Program.cs)
